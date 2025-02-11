@@ -21,16 +21,16 @@ BOT_TOKEN = environ.get('BOT_TOKEN', "")
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 
-PICS = (environ.get('PICS', 'https://graph.org/file/16fb6c4f7a8c2807f5bf0.jpg')).split() #SAMPLE PIC
+PICS = (environ.get('PICS', 'https://envs.sh/RtX.jpg https://envs.sh/R2x.jpg https://envs.sh/Rty.jpg')).split() #SAMPLE PIC
 NOR_IMG = environ.get("NOR_IMG", "https://graph.org/file/62efbcc4e7580b76530ba.jpg")
 MELCOW_VID = environ.get("MELCOW_VID", "https://graph.org/file/e215d12bfd4fa2155e90e.mp4")
 SPELL_IMG = environ.get("SPELL_IMG", "https://graph.org/file/9133dc596eabc73750774.jpg")
-SUBSCRIPTION = (environ.get('SUBSCRIPTION', 'https://telegra.ph/file/4963dfeee700078956e76.jpg'))
-CODE = (environ.get('CODE', 'https://telegra.ph/file/742a11b84ca0689f03102.jpg'))
+SUBSCRIPTION = (environ.get('SUBSCRIPTION', 'https://envs.sh/lY.jpg'))
+CODE = (environ.get('CODE', ''))
 
 #stream link shortner
-STREAM_SITE = (environ.get('STREAM_SITE', 'earnlinks.in'))
-STREAM_API = (environ.get('STREAM_API', '6b72a89b7f3b1ca3b26550ea8a546eedcd9431ae'))
+STREAM_SITE = (environ.get('STREAM_SITE', 'shrtfly.com'))
+STREAM_API = (environ.get('STREAM_API', '2521c9849b6ce96bdeaf4f6f4f9834b6'))
 STREAMHTO = (environ.get('STREAMHTO', 'https://t.me/wwwmovieslink/7'))
 
 # Admins, Channels & Users
@@ -43,36 +43,36 @@ auth_channel = environ.get('AUTH_CHANNEL', '') #Channel / Group Id for force sub
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
-support_chat_id = environ.get('SUPPORT_CHAT_ID', '') # support group id ( make sure bot is admin )
-reqst_channel = environ.get('REQST_CHANNEL_ID', '') # request channel id ( make sure bot is admin )
+support_chat_id = environ.get('SUPPORT_CHAT_ID', '-1002401879443') # support group id ( make sure bot is admin )
+reqst_channel = environ.get('REQST_CHANNEL_ID', '-1002258541880') # request channel id ( make sure bot is admin )
 REQST_CHANNEL = int(reqst_channel) if reqst_channel and id_pattern.search(reqst_channel) else None
 SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(support_chat_id) else None
 NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", True)) # True if you want no results messages in Log Channel
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://akz:akz@cluster0.chdmq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'akmovie')
 
 # Verify
-VERIFY = bool(environ.get('VERIFY', False)) # Verification On ( True ) / Off ( False )
+VERIFY = bool(environ.get('VERIFY', True)) # Verification On ( True ) / Off ( False )
 HOWTOVERIFY = environ.get('HOWTOVERIFY', 'https://t.me/wwwmovieslink/7') # How to open tutorial link for verification
 
 # Others
-SHORTLINK_URL = environ.get('SHORTLINK_URL', 'earnlinks.in')
-SHORTLINK_API = environ.get('SHORTLINK_API', '6b72a89b7f3b1ca3b26550ea8a546eedcd9431ae')
-IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', True))
+SHORTLINK_URL = environ.get('SHORTLINK_URL', 'shrtfly.com')
+SHORTLINK_API = environ.get('SHORTLINK_API', '2521c9849b6ce96bdeaf4f6f4f9834b6')
+IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', False))
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
 MAX_B_TN = environ.get("MAX_B_TN", "5")
 MAX_BTN = is_enabled((environ.get('MAX_BTN', "True")), True)
 PORT = environ.get("PORT", "8080")
-GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+pp_D21tjCtAzMjc1')
-CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/+QgSl55NlTiI0NDhl')
+GRP_LNK = environ.get('GRP_LNK', 'https://t.me/movie_seriesgroup')
+CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/akmovieshubbackup')
 TUTORIAL = environ.get('TUTORIAL', 'https://t.me/wwwmovieslink/7') # Tutorial video link for opening shortlink website 
 IS_TUTORIAL = bool(environ.get('IS_TUTORIAL', True))
-MSG_ALRT = environ.get('MSG_ALRT', '@GamerBhai02 ❤️')
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '')) #Log channel id ( make sure bot is admin )
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/+pp_D21tjCtAzMjc1') #Support group link ( make sure bot is admin )
+MSG_ALRT = environ.get('MSG_ALRT', '@AK_ownerbot ❤️')
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002405776043')) #Log channel id ( make sure bot is admin )
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/+JNCbLJgu744wYmI1') #Support group link ( make sure bot is admin )
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
 IMDB = is_enabled((environ.get('IMDB', "False")), False)
 AUTO_FFILTER = is_enabled((environ.get('AUTO_FFILTER', "True")), True)
@@ -85,9 +85,9 @@ LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False")
 SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True)
 MAX_LIST_ELM = environ.get("MAX_LIST_ELM", None)
 INDEX_REQ_CHANNEL = int(environ.get('INDEX_REQ_CHANNEL', LOG_CHANNEL))
-FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '')).split()]
+FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '-1002223668108')).split()]
 MELCOW_NEW_USERS = is_enabled((environ.get('MELCOW_NEW_USERS', "True")), True)
-PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "True")), True)
+PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "False")), True)
 PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "True")), True)
 
 LANGUAGES = ["malayalam", "", "tamil", "", "english", "", "hindi", "", "telugu", "", "kannada", "", "gujarati", "", "marathi", "", "punjabi", ""]
